@@ -1,0 +1,58 @@
+.backdrop{
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../images/Italy_001.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100%;
+  -webkit-filter: blur(10px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(1px);
+  position: absolute;
+}
+.welcome-block{
+  position: absolute;
+  height: 300px;
+  width: 500px;
+  border: 0px solid;
+  border-color:white;
+  margin-top: 40vh;
+  margin-left: calc((100vw - 500px)/2);
+}
+.welcome-header{
+  font-family: 'Josefin Sans', sans-serif;
+  font-style: italic;
+  font-size: 500%;
+  font-weight: 500;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+}
+.welcome-text{
+  font-family: 'Josefin Sans', sans-serif;
+  font-style: italic;
+  font-size: 200%;
+  font-weight: 400;
+  color: white;
+  text-align: center;
+  text-transform: capitalize;
+}
+.navbar-wrapper{
+  position: absolute;
+  height: 160px;
+  width: 900px;
+  border: 2px solid;
+  border-color:white;
+  margin-left: calc((100vw - 900px)/2);
+}
+.view-transition{
+  position: fixed;
+  float: right;
+  height: 100vh;
+  width: 7vw;
+  border: 2px solid;
+  border-color:white;
+  margin-left: 93vw;
+}
