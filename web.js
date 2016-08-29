@@ -3,7 +3,8 @@ var http = require('http');
 var gzippo = require('gzippo');
 
 var app = express();
-app.use(gzippo.staticGzip('.' + __dirname));
+app.use(gzippo.staticGzip('' + __dirname));
+console.log(__dirname);
 app.use('/*', function(req, res){
   res.sendfile(__dirname + '/index.html');
 });
