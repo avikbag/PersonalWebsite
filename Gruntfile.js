@@ -161,10 +161,14 @@ module.exports = function (grunt) {
         files: [{
           dot: true,
           src: [
-            '.tmp',
-            '<%= yeoman.dist %>/{,*/}*',
-            '!<%= yeoman.dist %>/.git{,*/}*'
-          ]
+                '.tmp',
+                '<%= yeoman.dist %>/*',
+                '!<%= yeoman.dist %>/.git{,*/}*',
+                '!<%= yeoman.dist %>/Procfile',
+                '!<%= yeoman.dist %>/package.json',
+                '!<%= yeoman.dist %>/web.js',
+                '!<%= yeoman.dist %>/node_modules'
+           ]
         }]
       },
       server: '.tmp'
@@ -423,10 +427,24 @@ module.exports = function (grunt) {
         configFile: 'test/karma.conf.js',
         singleRun: true
       }
+    },
+    buildcontrol: {
+      options: {
+        dir: 'dist',
+        commit: true,
+        push: true,
+        message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+    },
+      heroku: {
+        options: {
+            remote: 'https://git.heroku.com/avikbag.git',
+            branch: 'master'
+        }
+      }
     }
   });
 
-
+  grunt.registerTask('deploy', ['buildcontrol']);
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
       return grunt.task.run(['build', 'connect:dist:keepalive']);
