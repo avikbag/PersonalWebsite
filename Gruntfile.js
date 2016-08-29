@@ -24,7 +24,7 @@ module.exports = function (grunt) {
     app: require('./bower.json').appPath || 'app',
     dist: 'dist'
   };
-
+  grunt.loadNpmTasks('grunt-build-control');
   // Define the configuration for all the tasks
   grunt.initConfig({
 
