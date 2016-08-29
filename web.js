@@ -5,7 +5,7 @@ var gzippo = require('gzippo');
 var app = express();
 app.use(gzippo.staticGzip('' + __dirname));
 console.log(__dirname);
-app.use('./', function(req, res){
+app.use('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
 
