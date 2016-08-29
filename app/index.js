@@ -6,7 +6,7 @@ var app = express();
 app.use(gzippo.staticGzip('' + __dirname));
 console.log(__dirname);
 app.use('/*', function(req, res){
-  res.sendFile('.' + __dirname + '/index.html');
+  res.sendFile(__dirname + '/index.html');
 });
 
 var server = http.createServer(app);
