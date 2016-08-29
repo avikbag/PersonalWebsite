@@ -70,7 +70,7 @@
   width: 100vw;
   background-color: rgba(229, 231, 233, 0.95);
   z-index: 10;
-  border-bottom: 10px solid #01579B;
+  border-bottom: 2px solid #01579B;
   animation: window-call;
   animation-duration: 1s;
   animation-timing-function: ease-out;
@@ -107,7 +107,7 @@
   height: 90vh;
   width: 100vw;
   background-color: rgba(229, 231, 233, 0.95);
-  border-bottom: 6px solid #01579B;
+  border-bottom: 4px solid #01579B;
   z-index: 11;
   animation: curtain-call
   animation-duration: 1s;
