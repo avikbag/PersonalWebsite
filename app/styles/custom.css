@@ -28,6 +28,25 @@
   border-color:white;
   margin-top: 40vh;
   margin-left: calc((100vw - 500px)/2);
+  top: 130px;
+  animation: welblock;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 1.5s;
+  -webkit-animation: welblock; /* Chrome, Safari, Opera */
+  -webkit-animation-duration: 0.3s; /* Chrome, Safari, Opera */
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-delay: 1.5s;
+}
+@keyframes welblock {
+  from {top: 130px;}
+  to {top: 0px;}
+}
+@-webkit-keyframes welblock{
+  from {top: 130px;}
+  to {top: 0px;}
 }
 .welcome-header{
   font-family: 'Comfortaa', cursive;
@@ -47,6 +66,7 @@
   text-align: center;
   text-transform: capitalize;
 }
+
 .view-transition{
   position: fixed;
   float: right;
@@ -93,6 +113,7 @@
   padding-left: 7px;
   font-family: 'Comfortaa', cursive;
   font-size: 50px;
+  color: rgba(0, 0, 0, 1);
   animation: welcomeEnter;
   animation-duration: 2s;
   animation-timing-function: ease-out;
