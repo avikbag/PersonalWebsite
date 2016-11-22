@@ -24,9 +24,9 @@ angular
     // If you specify less than all of the keys, it will inherit from the
     // default shades
     $mdThemingProvider.definePalette('custom', {
-    '50': 'rgba(84, 110, 122, 0.75)',
-    '100': 'ffcdd2',
-    '200': 'ef9a9a',
+    '50': 'rgba(84, 110, 122, 0.25)',
+    '100': 'rgba(84, 110, 122, 0.15)',
+    '200': 'rgba(32, 40, 122, 0.75)',
     '300': 'e57373',
     '400': 'ef5350',
     '500': 'f44336',
@@ -49,7 +49,9 @@ angular
       'default': '800'
     })
     .backgroundPalette('custom', {
-      'default': '50' // use shade 200 for default, and keep all other shades the same
+      'default': '50', // use shade 200 for default, and keep all other shades the same
+      'hue-1': '100',
+      'hue-2': '200'
     });
   })
   .config(function ($routeProvider) {
@@ -63,6 +65,11 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
         controllerAs: 'about'
+      })
+      .when('/exp', {
+        templateUrl: 'views/exp.html',
+        controller: 'ExpCtrl',
+        controllerAs: 'exp'
       })
       .otherwise({
         redirectTo: '/'

@@ -1,0 +1,50 @@
+<div class="view" layout="column">
+  <md-toolbar class="md-primary">
+    <div class="md-toolbar-tools">
+      <md-icon md-font-set="material-icons" style="font-size: 32px; margin-right: 10px; margin-left: 10px; height: 32px; width: 32px;"> assignment_ind </md-icon>
+      <h2 class="md-flex">My Work Experience and Project Work</h2>
+    </div>
+  </md-toolbar>
+  <md-content style="color: white; overflow-x:shidden;">
+
+
+<md-subheader style="" class="md-background md-hue-2 md-primary">Work Experience </md-subheader>
+
+<md-list layout-padding flex style="height: 120px;">
+<md-list-item class="md-3-line md-background md-hue-2">
+      <md-icon md-font-set="material-icons" style="color: white; font-size: 32px; margin-right: 10px; margin-left: 10px; margin-top: 24.5px; margin-bottom:24.5px; height: 32px; width: 32px;" class="md-list-item"> work </md-icon>
+          <div class="md-list-item-text" layout="column">
+            <h3 style="color: white;">Sasquehanna International Group (SIG)</h3>
+            <h4 style="color: white;">Software Developer Co-op</h4>
+          </div>
+          <p class='md-list-item-text' style="text-align: right;">September 2015 - March 2016</p>
+</md-list-item>
+</md-list> 
+
+<md-subheader style="" class="md-background md-hue-2 md-primary">Projects </md-subheader>
+<md-list layout-padding flex>
+<md-list-item class="md-3-line md-background md-hue-2" href="{{urls[$index]}}" ng-repeat="item in names">
+        <i style="font-size: 40px; padding-top: 26px; padding-bottom: 26px;" class="devicon-github-plain-wordmark md-avatar"></i>
+          <div class="md-list-item-text" layout="row">
+            <h3 style="color: white;">{{ item }}</h3>
+          </div>
+          <i ng-repeat="l in lang[$index] | filter:filterFn" style="font-size: 40px; padding-top: 26px; padding-bottom: 26px;" class="devicon-{{map[l]}}-plain md-avatar"><br></i>
+          <md-menu md-offset="0 50">
+          <md-button aria-label="Open demo menu" ng-click="$mdOpenMenu($event)">
+          <md-icon md-font-set="material-icons" style="font-size: 30px; margin-right: 10px; margin-left: 10px; height: 30px; width: 30px; color: white;"> subdirectory_arrow_right 
+            <md-tooltip style="color: white;" md-direction="top">
+              Languages Used
+            </md-tooltip>
+          </md-icon>
+          </md-button>
+          <md-menu-content width="3" class="md-background md-hue-2">
+            <md-menu-item ng-repeat="m in lang[$index]">
+              <md-button style="color: white; text-align: center;"> <span md-menu-align-target>{{m}} </md-button>
+            </md-menu-item>
+          </md-menu-content>
+        </md-menu>
+        </md-list-item>
+</md-list> 
+    </md-content>
+
+</div>

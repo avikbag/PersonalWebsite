@@ -18,6 +18,8 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/custom.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css">
     <link rel="stylesheet" href="styles/font-awesome.min.css">
     <!-- endbuild -->
   </head>
@@ -33,24 +35,27 @@
             Hello World!  
           </h1>
         </div>
-        <div class='backdrop'></div>
+          <video playsinline autoplay muted loop poster="../images/NY_001.jpg" id="bgvid">
+            <source src="../video/preview.webm" type="video/webm">
+            <source src="../video/preview.mp4" type="video/mp4">
+          </video>
         <div class='overlay'></div>
 
 
         <div class='logo'></div>
         <div class='navbar-wrapper'>
           <ul class='navigation'>
-            <li> 
-              <a class="navitems" id="item1" href="#/about"> About Me </a>
-              <a class="subitem" href="#/about"> It's all about me right now. </a>
+            <li ng-class="{indicatorbg: loc === '/about'}"> 
+            <a ng-class="{indicator: loc === '/about', navitems: loc !== '/about' && animate === true, navitems_noanimate: animate === false}" id="item1" href="#/about"> About Me </a>
+            <a ng-class="{hidecursor: loc === '/about', subitem: loc !== '/about'}" href="#/about"> It's all about me right now. </a>
             </li>
             <li> 
               <a class="navitems" id="item2"> Education </a> 
               <p class="subitem"> Yes, I've been to school. </p>
             </li>
-            <li> 
-              <a class="navitems" id="item3"> Experience </a> 
-              <p class="subitem"> I try my hand at stuff. </p>
+            <li ng-class="{indicatorbg: loc === '/exp'}"> 
+            <a ng-class="{indicator: loc === '/exp', navitems: loc !== '/exp' && animate === true, navitems_noanimate: animate === false}" id="item3" href="#/exp"> Experience </a>
+            <a ng-class="{hidecursor: loc === '/exp', subitem: loc !== '/exp'}" href="#/exp"> It's all about me right now. </a>
             </li>
             <li> 
               <a class="navitems" id="item4"> Contact </a> 
@@ -102,6 +107,8 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/exp.js"></script>
+        <script src="scripts/services/grab.js"></script>
         <!-- endbuild -->
 </body>
 </html>

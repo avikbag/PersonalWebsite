@@ -8,10 +8,7 @@
  * Controller of the resumeAppApp
  */
 angular.module('resumeAppApp')
-  .controller('AboutCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('AboutCtrl', function ($rootScope, $location) {
+    $rootScope.loc = $location.path(); // '/Home'
+    console.log($rootScope.loc, $rootScope.animate);
   });
