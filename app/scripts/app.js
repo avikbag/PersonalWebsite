@@ -18,7 +18,8 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch', 
-    'ngMaterial'
+    'ngMaterial',
+    'chart.js',
   ])
   .config(function ($mdThemingProvider){
     // If you specify less than all of the keys, it will inherit from the

@@ -9,6 +9,45 @@
  */
 angular.module('resumeAppApp')
   .controller('ExpCtrl', function ($rootScope, $scope, $location, grab) {
+    $scope.options = {
+      maintainAspectRatio: false,
+      defaultFontColor: "#000",
+      title: {
+                display: true,
+                text: "Programming Languages",
+                fontColor: 'white',
+             },
+      animation: {
+                duration: 2500,
+              },
+      scales:{
+          yAxes:  [{
+                  ticks: {
+                          beginAtZero: true, 
+                          fontColor: 'white'
+                         },
+                  gridLines: {
+                          display: false,
+                         },
+                  }],
+          xAxes:  [{
+                  ticks: {
+                          stacked: true,
+                          beginAtZero: true, 
+                          fontColor: 'white'
+                         },
+                  gridLines: {
+                          display: false,
+                         },
+                  }],
+            }
+    };
+
+    $scope.labels = ['JavaScript', 'C++/C', 'VHDL', 'Python'];
+    $scope.data = [
+          [4, 5, 4, 5]
+        ];
+    $scope.series = ['Languages'];
     $rootScope.loc = $location.path(); // '/Home'
     console.log($scope.loc);
 
